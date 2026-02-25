@@ -11,7 +11,7 @@
   "build": "echo 'Build complete'",
   "format": "npx prettier . --write"
 }
-  },
+  }
   "author": "UltraN0va",
   "license": "GPL-3.0-or-later",
   "dependencies": {
@@ -25,4 +25,5 @@
     "prettier": "3.2.5"
   }
 }
+
 
