@@ -101,7 +101,9 @@ server.on('listening', () => {
   console.log(`Running at http://localhost:${PORT}`)
 })
 
-const PORT = process.env.PORT || 8080;
+// This tells the server to use Render's port or default to 10000
+const PORT = process.env.PORT || 10000;
+
 server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Proxy is live at http://localhost:${PORT}`);
 });
