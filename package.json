@@ -1,1 +1,1 @@
-{\n  "name": "your-package-name",\n  "version": "1.0.0",\n  "type": "module",\n  "engines": {\n    "node": ">=14.0.0"\n  },\n  "scripts": {\n    "start": "node index.js",\n    "build": "webpack --mode production",\n    "format": "prettier --write ."\n  },\n  "author": "your-name",\n  "license": "MIT",\n  "dependencies": {},\n  "devDependencies": {}\n}
+{"name": "cosmic", "version": "1.0.0", "scripts": {"start": "node index.js", "test": "jest"}, "dependencies": {"express": "^4.17.1", "mongoose": "^5.10.9"}}
