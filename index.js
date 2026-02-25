@@ -101,9 +101,9 @@ server.on('listening', () => {
   console.log(`Running at http://localhost:${PORT}`)
 })
 
-// This tells the server to use Render's port or default to 10000
-const PORT = process.env.PORT || 10000;
+// Koyeb uses process.env.PORT automatically
+const PORT = process.env.PORT || 8000; 
 
-server.listen(PORT, () => {
-  console.log(`Proxy is live at http://localhost:${PORT}`);
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`Proxy is live on port ${PORT}`);
 });
