@@ -7,8 +7,10 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "start": "node index.js",
-    "format": "npx prettier . --write"
+  "start": "node index.js",
+  "build": "echo 'Build complete'",
+  "format": "npx prettier . --write"
+}
   },
   "author": "UltraN0va",
   "license": "GPL-3.0-or-later",
@@ -23,3 +25,4 @@
     "prettier": "3.2.5"
   }
 }
+
