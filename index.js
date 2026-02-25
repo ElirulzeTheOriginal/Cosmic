@@ -101,12 +101,7 @@ server.on('listening', () => {
   console.log(`Running at http://localhost:${PORT}`)
 })
 
-// Remove server.listen(...) entirely
-// Export the app for Vercel
-export default function handler(req, res) {
-  if (bareServer.shouldRoute(req)) {
-    bareServer.routeRequest(req, res);
-  } else {
-    app(req, res);
-  }
-}
+const PORT = process.env.PORT || 8080;
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
