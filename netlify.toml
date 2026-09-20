@@ -1,0 +1,57 @@
+# Netlify hosts the Cosmic front-end as a static site out of ./static.
+#
+# index.js (the Express + Bare server entry point) is still the entry point for
+# long-running hosts such as Fly.io, Render or Docker. It must NOT be used as the
+# Netlify build command: `node index.js` starts a server that never exits, so the
+# build has nothing to publish and eventually fails.
+[build]
+  command = "echo 'No build step required - publishing ./static'"
+  publish = "static"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Pretty routes previously registered by index.js.
+[[redirects]]
+  from = "/ap"
+  to = "/apps.html"
+  status = 200
+
+[[redirects]]
+  from = "/g"
+  to = "/games.html"
+  status = 200
+
+[[redirects]]
+  from = "/s"
+  to = "/settings.html"
+  status = 200
+
+[[redirects]]
+  from = "/t"
+  to = "/tabs.html"
+  status = 200
+
+[[redirects]]
+  from = "/p"
+  to = "/go.html"
+  status = 200
+
+[[redirects]]
+  from = "/tos"
+  to = "/tos.html"
+  status = 200
+
+[[redirects]]
+  from = "/emu"
+  to = "/emu.html"
+  status = 200
+
+# The service worker is registered for the whole origin, so it needs to be
+# allowed to claim a scope above its own directory.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Service-Worker-Allowed = "/"
+    Cache-Control = "no-cache"

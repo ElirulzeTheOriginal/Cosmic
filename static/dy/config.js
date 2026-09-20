@@ -5,6 +5,8 @@ self.__dynamic$config = {
   logLevel: 0,
   bare: {
     version: 2,
+    // Must match the `bare` value in /m/config.js — on static hosts this
+    // needs to be the absolute https:// URL of your bare server.
     path: '/o/',
   },
   tab: {
