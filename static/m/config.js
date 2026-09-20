@@ -1,5 +1,8 @@
 self.__uv$config = {
     prefix: '/a/',
+    // Bare server endpoint. '/o/' only works on a host that runs index.js.
+    // On static hosts (Netlify etc.) set this to the absolute https:// URL
+    // of your bare server, e.g. 'https://bare.example.com/o/'.
     bare: '/o/',
     encodeUrl:  Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
