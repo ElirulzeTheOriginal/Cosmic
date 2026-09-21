@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Tell Northflank your app uses port 8080
-EXPOSE 8080
+EXPOSE 8000
 
 # The command to actually start your proxy
 CMD [ "node", "index.js" ]
